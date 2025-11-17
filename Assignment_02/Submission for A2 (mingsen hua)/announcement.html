@@ -77,5 +77,14 @@
         <p>&copy; Copyright 2025. All Right Reserved.</p>
         
     </footer>
+    <script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.main-nav');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+</script>
 </body>
 </html>

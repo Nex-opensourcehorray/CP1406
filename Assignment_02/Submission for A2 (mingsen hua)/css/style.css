@@ -500,7 +500,7 @@ footer{
 
   /* Show big hamburger only on small devices */
   .nav-toggle {
-    display: flex !important;
+    display: flex;
   }
 
   /* Vertical nav panel */
@@ -508,7 +508,7 @@ footer{
     list-style: none;
     padding: 0;
     margin: 0;
-    display: none !important;   /* hidden until toggled */
+    display: none;   /* hidden until toggled */
     flex-direction: column;
     background-color: lightgray;
     text-align: left;
@@ -516,18 +516,18 @@ footer{
 
   /* When JS toggles .nav-open, show menu */
   .main-nav.nav-open ul {
-    display: flex !important;
+    display: flex;
   }
 
   /* Vertical stacked items */
   .main-nav li {
-    display: block !important;
+    display: block;
     font-size: 1.2em;
     border-top: 1px solid #ddd;
   }
 
   .main-nav li a {
-    display: block !important;
+    display: block;
     padding: 0.75em 1em;
     text-align: left;
   }
@@ -541,18 +541,18 @@ footer{
 
   /* Hide hamburger entirely on larger screens */
   .nav-toggle {
-    display: none !important;
+    display: none;
   }
 
   /* Restore horizontal nav */
   .main-nav ul {
-    display: block !important;
-    flex-direction: row !important;
+    display: block;
+    flex-direction: row;
     text-align: center;
   }
 
   .main-nav li {
-    display: inline-block !important;
+    display: inline-block;
     font-size: 1.5em;
   }
 
