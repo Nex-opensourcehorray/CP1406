@@ -1,0 +1,565 @@
+header{
+    background-color: dodgerblue;
+    text-align: left;
+    text-decoration-color: blue;
+    padding: 1px;
+    position: relative;
+}
+
+header h1{
+    font-size: 5em;
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: bold;
+    color: rgb(247, 203, 114);
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+header img{
+    display: block;
+    margin-left: auto;
+    width: 200px;
+    height: auto;
+}
+/* Big hamburger button in the top-right */
+.nav-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 56px;                
+  height: 44px;
+  padding: 8px;
+  display: none;              
+  background: rgba(0,0,0,0.4);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* The three bars inside the button */
+.nav-toggle-bar {
+  width: 30px;   
+  height: 4px;                
+  background-color: #ffffff;
+  border-radius: 2px;
+}
+
+
+nav ul{
+    background-color: lightgray;
+    margin: 0;
+    text-align: center;
+}
+
+nav li{
+    display: inline-block;
+    font-size: 1.5em;
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: bold;
+}
+
+nav li a{
+    display: block;
+    color: rosybrown;
+    text-align: center;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+main {
+    clear: left;
+    background-color: #f3d881;
+    padding: 40px;
+    font-size: 1em;
+}
+
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: #f3d881;
+}
+
+.column {
+    flex: 1;
+    background-color: #c1c1dd;
+    padding: 20px;
+    text-align: left;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: Verdana, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.column h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.form-messages {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.form-messages.is-success { 
+  background: #e8f6ee; 
+  border: 1px solid #2e7d32; 
+  color: #1b5e20; 
+}
+
+.form-messages.is-error   { 
+  background: #fdecea; 
+  border: 1px solid #c62828; 
+  color: #8e0000; 
+}
+
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  main{
+    padding: 30px;
+  }
+
+  .column {
+    margin-bottom: 20px;
+  }
+
+  /* Show the hamburger on mobile */
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Make nav a vertical slide-down panel */
+  .main-nav {
+    background-color: lightgray;
+  }
+
+  .main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  /* When nav-open class is added via JS, show menu */
+  .main-nav.nav-open ul {
+    display: flex;
+  }
+
+  /* Each item full-width, stacked */
+  .main-nav li {
+    display: block;
+    font-size: 1.2em;
+    border-top: 1px solid #ddd;
+  }
+
+  .main-nav li a {
+    display: block;
+    padding: 0.75em 1em;
+    text-align: left;
+  }
+
+  /* Optional: shrink heading & logo a bit on mobile */
+  header h1 { font-size: 2.5em; }
+  header img { width: 160px; }
+
+}
+
+
+main div{
+    text-align: left;
+    background-color: #c1c1dd;
+    padding: 100px;
+    margin: 10px;
+    font-size: 1em;
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* Form Styling Fix */
+.container input[type="text"],
+.container input[type="password"],
+.container input[type="email"] {
+  display: block;
+  width: 60%;
+  margin: 3px 0;
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.container label {
+  margin-bottom: 2px;
+  display: inline-block;
+}
+
+.container {
+  padding: 30px;
+  background-color: #a39fa2;
+  text-align: left;
+}
+
+.container p {
+  margin: 4px 0;
+}
+
+/* Member Cards Layout */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;         
+  justify-content: center;  
+  gap: 20px;                
+  background-color: #f3d881;
+  padding: 20px;
+}
+
+.card {
+  flex: 1 1 300px;
+  max-width: 350px;         
+  background-color: #c1c1dd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card li {
+  font-size: 1em;
+  font-family: Verdana, Arial, sans-serif;
+  font-style: italic;
+  margin: 0;
+  text-align: left;
+}
+
+
+main div img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: auto;
+}
+main article{
+    background-color: #c1c1dd;
+    padding: 20px;
+    margin: 10px;
+    font-size: 1em;
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+}
+
+main article img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+main h1{
+    text-align: left;
+    font-size: 2em;
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: bold;
+}
+
+footer{
+    background-color: gray;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    font-size: 0.75em;
+    clear: both;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Cards: wider on desktop, centered grid */
+.card-grid { justify-content: center; }
+
+/* Improve readability */
+.card {
+  flex: 1 1 360px;
+  max-width: 420px;
+}
+
+.card h4 {
+  margin: 0 0 .5rem;
+}
+
+.card .card-body {
+  max-width: 60ch;               
+  margin-inline: auto;
+  text-align: left;
+}
+
+.card li,
+.card p {
+  font-style: normal;            
+  line-height: 1.6;
+  white-space: normal;          
+  overflow-wrap: normal;         
+  hyphens: auto;                 
+}
+.error { 
+  color: red; 
+  font-size: 0.9em; 
+  margin-top: 4px; 
+}
+.sr-only { 
+  position: absolute; 
+  left: -9999px; 
+  width: 1px; 
+  height: 1px; 
+  overflow: hidden; 
+}
+
+/* ────────────────────────────────────────────────────────────── */
+/* TABLETS: improve readability & layout (≥768px)         */
+/* ────────────────────────────────────────────────────────────── */
+
+@media (min-width: 768px) {
+  .card.card--horizontal {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    align-items: start;
+    gap: 16px;
+  }
+  .card.card--horizontal img {
+    width: 160px;
+    height: auto;
+  }
+
+   /* Show the hamburger on mobile */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Make nav a vertical slide-down panel */
+  .main-nav {
+    background-color: lightgray;
+  }
+
+  .main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  /* When nav-open class is added via JS, show menu */
+  .main-nav.nav-open ul {
+    display: flex;
+  }
+
+  /* Make each item full-width, stacked */
+  .main-nav li {
+    display: block;
+    font-size: 1.2em;
+    border-top: 1px solid #ddd;
+  }
+
+  .main-nav li a {
+    display: block;
+    padding: 0.75em 1em;
+    text-align: left;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────── */
+/* SMALL PHONES: tighten spacing, larger tap targets (≤540px)     */
+/* ────────────────────────────────────────────────────────────── */
+@media (max-width: 540px) {
+  header h1 { font-size: 2.25em; }
+  header img { width: 140px; }
+
+  nav li { font-size: 1.1em; }
+  nav li a { padding: 0.6em 0.75em; }
+
+  main { padding: 20px; }
+  .row { gap: 12px; }
+  .column { padding: 14px; }
+  main div { padding: 20px; } 
+  main article { padding: 14px; }
+
+  .card-grid { gap: 14px; padding: 14px; }
+  .card { flex: 1 1 100%; max-width: 100%; }
+
+  .container { padding: 12px; }
+  input, select{ width: 100%; }
+  .container input[type="text"],
+  .container input[type="password"],
+  .container input[type="email"] { width: 100%; }
+
+  main article img,
+  main div img { width: 100%; max-width: 320px; }
+
+   /* Show the hamburger on mobile */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* Make nav a vertical slide-down panel */
+  .main-nav {
+    background-color: lightgray;
+  }
+
+  .main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  /* When nav-open class is added via JS, show menu */
+  .main-nav.nav-open ul {
+    display: flex;
+  }
+
+  /* Make each item full-width, stacked */
+  .main-nav li {
+    display: block;
+    font-size: 1.2em;
+    border-top: 1px solid #ddd;
+  }
+
+  .main-nav li a {
+    display: block;
+    padding: 0.75em 1em;
+    text-align: left;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────── */
+/* LARGE DESKTOPS: improve readability & layout (≥1024px)         */
+/* ────────────────────────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  main { padding: 60px; font-size: 1.05em; }
+
+  .row { gap: 28px; }
+  .column { padding: 24px; }
+
+  .card-grid { 
+    max-width: 1200px; 
+    margin-inline: auto; 
+    gap: 24px; 
+    padding: 24px; 
+  }
+  .card { 
+    flex: 1 1 360px; 
+    max-width: 420px; 
+  }
+
+  header img { width: 260px; }
+}
+
+/* ============================================================
+   FINAL APPEND: Clean Override for Hamburger Menu (≤540px only)
+   ============================================================ */
+
+@media (max-width: 540px) {
+
+  /* Show big hamburger only on small devices */
+  .nav-toggle {
+    display: flex !important;
+  }
+
+  /* Vertical nav panel */
+  .main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none !important;   /* hidden until toggled */
+    flex-direction: column;
+    background-color: lightgray;
+    text-align: left;
+  }
+
+  /* When JS toggles .nav-open, show menu */
+  .main-nav.nav-open ul {
+    display: flex !important;
+  }
+
+  /* Vertical stacked items */
+  .main-nav li {
+    display: block !important;
+    font-size: 1.2em;
+    border-top: 1px solid #ddd;
+  }
+
+  .main-nav li a {
+    display: block !important;
+    padding: 0.75em 1em;
+    text-align: left;
+  }
+}
+
+/* ============================================================
+   DISABLE HAMBURGER ABOVE 540px
+   ============================================================ */
+
+@media (min-width: 541px) {
+
+  /* Hide hamburger entirely on larger screens */
+  .nav-toggle {
+    display: none !important;
+  }
+
+  /* Restore horizontal nav */
+  .main-nav ul {
+    display: block !important;
+    flex-direction: row !important;
+    text-align: center;
+  }
+
+  .main-nav li {
+    display: inline-block !important;
+    font-size: 1.5em;
+  }
+
+  .main-nav li a {
+    padding: 0.5em 1em;
+    text-align: center;
+  }
+}
+
+
