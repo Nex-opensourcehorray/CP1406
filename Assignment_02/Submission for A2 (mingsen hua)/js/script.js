@@ -33,7 +33,8 @@
     const selectedDate = new Date(appointmentDateEl.value);
     const today = new Date();
     today.setHours(0,0,0,0);
-    const referralEl = document.getElementById("referral");
+    const referralEl = document.getElementById("reference");
+
     // helper to show inline error under a field
     const showError = (el, msg) => {
       if (!el) return;
@@ -84,24 +85,21 @@
     if (!appointmentDateEl.value || selectedDate < today) {
       showError(appointmentDateEl, "Please choose a date today or later.");
       isValid = false;
-
+    }
     
     if (!referralEl.value) {
       showError(referralEl, "Please choose an option.");
       isValid = false;
-}
-
-}
-
-
+    }
 
     if (isValid) {
       setFormMessage("Booking form submitted successfully!", "success");
       document.getElementById("bookingForm").reset();
       return true;
     }
-      setFormMessage("Please fix the errors above and try again.", "error");
-      return false;
+
+    setFormMessage("Please fix the errors above and try again.", "error");
+    return false;
   }
 
 })();

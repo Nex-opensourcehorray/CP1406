@@ -1,38 +1,80 @@
-header{
-    background-color: dodgerblue;
-    text-align: left;
-    text-decoration-color: blue;
-    padding: 1px;
-    position: relative;
+/* =========================================
+   GLOBAL LAYOUT & HEADER
+   ========================================= */
+
+header {
+  background-color: dodgerblue;
+  text-align: left;
+  text-decoration-color: blue;
+  padding: 1px;
+  position: relative;
 }
 
-header h1{
-    font-size: 5em;
-    font-family: Verdana, Arial, sans-serif;
-    font-weight: bold;
-    color: rgb(247, 203, 114);
-    margin: 0;
-    padding: 10px;
-    text-align: left;
-    text-shadow: 2px 2px 4px #000000;
+header h1 {
+  font-size: 5em;
+  font-family: Verdana, Arial, sans-serif;
+  font-weight: bold;
+  color: rgb(247, 203, 114);
+  margin: 0;
+  padding: 10px;
+  text-align: left;
+  text-shadow: 2px 2px 4px #000000;
 }
 
-header img{
-    display: block;
-    margin-left: auto;
-    width: 200px;
-    height: auto;
+header img {
+  display: block;
+  margin-left: auto;
+  width: 200px;
+  height: auto;
 }
-/* Big hamburger button in the top-right */
+
+/* =========================================
+   NAVIGATION + HAMBURGER
+   ========================================= */
+
+.main-nav {
+  background-color: lightgray;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.main-nav li {
+  display: inline-block;
+  font-size: 1.5em;
+  font-family: Verdana, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.main-nav a {
+  display: block;
+  color: rosybrown;
+  text-align: center;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: wheat;
+}
+
+/* Hamburger button (mobile only, see media queries) */
 .nav-toggle {
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 56px;                
+  width: 56px;
   height: 44px;
   padding: 8px;
-  display: none;              
-  background: rgba(0,0,0,0.4);
+  display: none; /* shown only <= 540px */
+  background: rgba(0, 0, 0, 0.4);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -44,161 +86,142 @@ header img{
   align-items: center;
 }
 
-/* The three bars inside the button */
 .nav-toggle-bar {
-  width: 30px;   
-  height: 4px;                
+  width: 30px;
+  height: 4px;
   background-color: #ffffff;
   border-radius: 2px;
 }
 
-
-nav ul{
-    background-color: lightgray;
-    margin: 0;
-    text-align: center;
-}
-
-nav li{
-    display: inline-block;
-    font-size: 1.5em;
-    font-family: Verdana, Arial, sans-serif;
-    font-weight: bold;
-}
-
-nav li a{
-    display: block;
-    color: rosybrown;
-    text-align: center;
-    padding: 0.5em 1em;
-    text-decoration: none;
-}
+/* =========================================
+   MAIN CONTENT & LAYOUT
+   ========================================= */
 
 main {
-    clear: left;
-    background-color: #f3d881;
-    padding: 40px;
-    font-size: 1em;
+  clear: left;
+  background-color: #f3d881;
+  padding: 40px;
+  font-size: 1em;
+  font-family: Verdana, Arial, sans-serif;
 }
 
-
 .row {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    gap: 20px;
-    flex-wrap: wrap;
-    background-color: #f3d881;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  flex-wrap: wrap;
+  background-color: #f3d881;
 }
 
 .column {
-    flex: 1;
-    background-color: #c1c1dd;
-    padding: 20px;
-    text-align: left;
-    box-sizing: border-box;
-    border-radius: 10px;
-    font-family: Verdana, Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  flex: 1;
+  background-color: #c1c1dd;
+  padding: 20px;
+  text-align: left;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-family: Verdana, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .column h1 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    text-align: center;
-    font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.8em;
 }
 
-.form-messages {
-  margin-top: 12px;
-  padding: 10px 12px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-.form-messages.is-success { 
-  background: #e8f6ee; 
-  border: 1px solid #2e7d32; 
-  color: #1b5e20; 
-}
-
-.form-messages.is-error   { 
-  background: #fdecea; 
-  border: 1px solid #c62828; 
-  color: #8e0000; 
+/* Generic content blocks */
+main div {
+  text-align: left;
+  background-color: #c1c1dd;
+  padding: 100px;
+  margin: 10px;
+  font-size: 1em;
+  font-family: Verdana, Arial, sans-serif;
+  font-weight: bold;
 }
 
-
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  main{
-    padding: 30px;
-  }
-
-  .column {
-    margin-bottom: 20px;
-  }
-
-  /* Show the hamburger on mobile */
-  .nav-toggle {
-    display: flex;
-  }
-
-  /* Make nav a vertical slide-down panel */
-  .main-nav {
-    background-color: lightgray;
-  }
-
-  .main-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: none;
-    flex-direction: column;
-    text-align: left;
-  }
-
-  /* When nav-open class is added via JS, show menu */
-  .main-nav.nav-open ul {
-    display: flex;
-  }
-
-  /* Each item full-width, stacked */
-  .main-nav li {
-    display: block;
-    font-size: 1.2em;
-    border-top: 1px solid #ddd;
-  }
-
-  .main-nav li a {
-    display: block;
-    padding: 0.75em 1em;
-    text-align: left;
-  }
-
-  /* Optional: shrink heading & logo a bit on mobile */
-  header h1 { font-size: 2.5em; }
-  header img { width: 160px; }
-
+main article {
+  background-color: #c1c1dd;
+  padding: 20px;
+  margin: 10px;
+  font-size: 1em;
+  font-family: Verdana, Arial, sans-serif;
+  font-weight: bold;
+  border-radius: 10px;
+  text-align: center;
 }
 
-
-main div{
-    text-align: left;
-    background-color: #c1c1dd;
-    padding: 100px;
-    margin: 10px;
-    font-size: 1em;
-    font-family: Verdana, Arial, sans-serif;
-    font-weight: bold;
+main h1 {
+  text-align: left;
+  font-size: 2em;
+  font-family: Verdana, Arial, sans-serif;
+  font-weight: bold;
 }
 
-/* Form Styling Fix */
+/* Images inside main content */
+main div img,
+main article img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  border-radius: 10px;
+}
+
+main article img {
+  width: 300px;
+  margin-bottom: 15px;
+}
+
+main div img {
+  width: 200px;
+}
+
+/* Background hero images (articles, etc.) */
+#Article_Background img,
+#Dental_Promotion img,
+.article-image,
+.about_centre {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 0 auto 1rem;
+}
+
+/* Overlay card (articles page) */
+.overlay {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   FORMS (REGISTER / SIGN-IN / BOOKING)
+   ========================================= */
+
+.container {
+  padding: 30px;
+  background-color: #a39fa2;
+  text-align: left;
+}
+
+.container p {
+  margin: 4px 0;
+}
+
+.container label {
+  margin-bottom: 2px;
+  display: inline-block;
+}
+
 .container input[type="text"],
 .container input[type="password"],
 .container input[type="email"] {
@@ -211,34 +234,117 @@ main div{
   border-radius: 4px;
 }
 
-.container label {
-  margin-bottom: 2px;
+/* Make selects consistent */
+.container select {
+  display: block;
+  width: 60%;
+  margin: 3px 0;
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Form messages (for JS validation) */
+.form-messages {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.form-messages.is-success {
+  background: #e8f6ee;
+  border: 1px solid #2e7d32;
+  color: #1b5e20;
+}
+
+.form-messages.is-error {
+  background: #fdecea;
+  border: 1px solid #c62828;
+  color: #8e0000;
+}
+
+/* Inline error text */
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 4px;
+}
+
+/* Screen-reader only helpers */
+.sr-only {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Buttons / CTAs */
+.bookbtn,
+.btn-consult {
   display: inline-block;
+  padding: 0.75em 1.5em;
+  margin-top: 0.5rem;
+  border-radius: 999px;
+  border: none;
+  background-color: #1e88e5;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: Verdana, Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.container {
-  padding: 30px;
-  background-color: #a39fa2;
-  text-align: left;
+.bookbtn:hover,
+.bookbtn:focus,
+.btn-consult:hover,
+.btn-consult:focus {
+  background-color: #1565c0;
 }
 
-.container p {
-  margin: 4px 0;
+/* Secondary outline button */
+.btn-outline {
+  display: inline-block;
+  padding: 0.6em 1.4em;
+  margin-top: 0.5rem;
+  border-radius: 999px;
+  border: 2px solid #1e88e5;
+  background-color: transparent;
+  color: #1e88e5;
+  font-size: 0.95rem;
+  font-family: Verdana, Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-/* Member Cards Layout */
+.btn-outline:hover,
+.btn-outline:focus {
+  background-color: #1e88e5;
+  color: #ffffff;
+}
+
+/* =========================================
+   MEMBER CARDS
+   ========================================= */
+
 .card-grid {
   display: flex;
-  flex-wrap: wrap;         
-  justify-content: center;  
-  gap: 20px;                
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
   background-color: #f3d881;
   padding: 20px;
 }
 
 .card {
-  flex: 1 1 300px;
-  max-width: 350px;         
+  flex: 1 1 360px;
+  max-width: 420px;
   background-color: #c1c1dd;
   border-radius: 10px;
   padding: 20px;
@@ -253,6 +359,16 @@ main div{
   margin-bottom: 15px;
 }
 
+.card h4 {
+  margin: 0 0 0.5rem;
+}
+
+.card .card-body {
+  max-width: 60ch;
+  margin-inline: auto;
+  text-align: left;
+}
+
 .card li {
   font-size: 1em;
   font-family: Verdana, Arial, sans-serif;
@@ -261,98 +377,62 @@ main div{
   text-align: left;
 }
 
-
-main div img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
-    height: auto;
-}
-main article{
-    background-color: #c1c1dd;
-    padding: 20px;
-    margin: 10px;
-    font-size: 1em;
-    font-family: Verdana, Arial, sans-serif;
-    font-weight: bold;
-    border-radius: 10px;
-    text-align: center;
-}
-
-main article img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-main h1{
-    text-align: left;
-    font-size: 2em;
-    font-family: Verdana, Arial, sans-serif;
-    font-weight: bold;
-}
-
-footer{
-    background-color: gray;
-    text-align: center;
-    padding: 10px;
-    color: white;
-    font-size: 0.75em;
-    clear: both;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Cards: wider on desktop, centered grid */
-.card-grid { justify-content: center; }
-
-/* Improve readability */
-.card {
-  flex: 1 1 360px;
-  max-width: 420px;
-}
-
-.card h4 {
-  margin: 0 0 .5rem;
-}
-
-.card .card-body {
-  max-width: 60ch;               
-  margin-inline: auto;
-  text-align: left;
-}
-
 .card li,
 .card p {
-  font-style: normal;            
+  font-style: normal;
   line-height: 1.6;
-  white-space: normal;          
-  overflow-wrap: normal;         
-  hyphens: auto;                 
-}
-.error { 
-  color: red; 
-  font-size: 0.9em; 
-  margin-top: 4px; 
-}
-.sr-only { 
-  position: absolute; 
-  left: -9999px; 
-  width: 1px; 
-  height: 1px; 
-  overflow: hidden; 
+  white-space: normal;
+  overflow-wrap: normal;
+  hyphens: auto;
 }
 
-/* ────────────────────────────────────────────────────────────── */
-/* TABLETS: improve readability & layout (≥768px)         */
-/* ────────────────────────────────────────────────────────────── */
+/* "Read more" link under member cards */
+.more-link {
+  text-align: center;
+  margin: 1.5rem 0 0;
+}
 
+.more-link a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #1e88e5;
+}
+
+.more-link a:hover,
+.more-link a:focus {
+  text-decoration: underline;
+}
+
+/* Lists spacing inside main */
+main ul {
+  margin: 0.5rem 0 1rem 1.2rem;
+}
+
+main ul li {
+  margin-bottom: 0.35rem;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+  background-color: gray;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  font-size: 0.75em;
+  clear: both;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* =========================================
+   RESPONSIVE BREAKPOINTS
+   ========================================= */
+
+/* TABLETS & UP (cards horizontal) */
 @media (min-width: 768px) {
   .card.card--horizontal {
     display: grid;
@@ -360,102 +440,113 @@ footer{
     align-items: start;
     gap: 16px;
   }
+
   .card.card--horizontal img {
     width: 160px;
     height: auto;
   }
 
-   /* Show the hamburger on mobile */
-  .nav-toggle {
-    display: block;
+  main {
+    padding: 60px;
+    font-size: 1.05em;
   }
 
-  /* Make nav a vertical slide-down panel */
-  .main-nav {
-    background-color: lightgray;
+  .row {
+    gap: 28px;
   }
 
-  .main-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: none;
-    flex-direction: column;
-    text-align: left;
+  .column {
+    padding: 24px;
   }
 
-  /* When nav-open class is added via JS, show menu */
-  .main-nav.nav-open ul {
-    display: flex;
+  .card-grid {
+    max-width: 1200px;
+    margin-inline: auto;
+    gap: 24px;
+    padding: 24px;
   }
 
-  /* Make each item full-width, stacked */
-  .main-nav li {
-    display: block;
-    font-size: 1.2em;
-    border-top: 1px solid #ddd;
-  }
-
-  .main-nav li a {
-    display: block;
-    padding: 0.75em 1em;
-    text-align: left;
+  header img {
+    width: 260px;
   }
 }
 
-/* ────────────────────────────────────────────────────────────── */
-/* SMALL PHONES: tighten spacing, larger tap targets (≤540px)     */
-/* ────────────────────────────────────────────────────────────── */
+/* SMALL PHONES (≤540px): hamburger + vertical nav, tighter spacing */
 @media (max-width: 540px) {
-  header h1 { font-size: 2.25em; }
-  header img { width: 140px; }
+  header h1 {
+    font-size: 2.25em;
+  }
 
-  nav li { font-size: 1.1em; }
-  nav li a { padding: 0.6em 0.75em; }
+  header img {
+    width: 140px;
+  }
 
-  main { padding: 20px; }
-  .row { gap: 12px; }
-  .column { padding: 14px; }
-  main div { padding: 20px; } 
-  main article { padding: 14px; }
+  main {
+    padding: 20px;
+  }
 
-  .card-grid { gap: 14px; padding: 14px; }
-  .card { flex: 1 1 100%; max-width: 100%; }
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
 
-  .container { padding: 12px; }
-  input, select{ width: 100%; }
+  .column {
+    padding: 14px;
+    margin-bottom: 20px;
+  }
+
+  main div {
+    padding: 20px;
+  }
+
+  main article {
+    padding: 14px;
+  }
+
+  .card-grid {
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .container {
+    padding: 12px;
+  }
+
   .container input[type="text"],
   .container input[type="password"],
-  .container input[type="email"] { width: 100%; }
+  .container input[type="email"],
+  .container select {
+    width: 100%;
+  }
 
   main article img,
-  main div img { width: 100%; max-width: 320px; }
+  main div img {
+    width: 100%;
+    max-width: 320px;
+  }
 
-   /* Show the hamburger on mobile */
+  /* Show hamburger only on small devices */
   .nav-toggle {
-    display: block;
+    display: flex;
   }
 
-  /* Make nav a vertical slide-down panel */
-  .main-nav {
-    background-color: lightgray;
-  }
-
+  /* Vertical nav panel, hidden until .nav-open */
   .main-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     display: none;
     flex-direction: column;
     text-align: left;
   }
 
-  /* When nav-open class is added via JS, show menu */
   .main-nav.nav-open ul {
     display: flex;
   }
 
-  /* Make each item full-width, stacked */
   .main-nav li {
     display: block;
     font-size: 1.2em;
@@ -463,91 +554,19 @@ footer{
   }
 
   .main-nav li a {
-    display: block;
     padding: 0.75em 1em;
     text-align: left;
   }
 }
 
-/* ────────────────────────────────────────────────────────────── */
-/* LARGE DESKTOPS: improve readability & layout (≥1024px)         */
-/* ────────────────────────────────────────────────────────────── */
-@media (min-width: 1024px) {
-  main { padding: 60px; font-size: 1.05em; }
-
-  .row { gap: 28px; }
-  .column { padding: 24px; }
-
-  .card-grid { 
-    max-width: 1200px; 
-    margin-inline: auto; 
-    gap: 24px; 
-    padding: 24px; 
-  }
-  .card { 
-    flex: 1 1 360px; 
-    max-width: 420px; 
-  }
-
-  header img { width: 260px; }
-}
-
-/* ============================================================
-   FINAL APPEND: Clean Override for Hamburger Menu (≤540px only)
-   ============================================================ */
-
-@media (max-width: 540px) {
-
-  /* Show big hamburger only on small devices */
-  .nav-toggle {
-    display: flex;
-  }
-
-  /* Vertical nav panel */
-  .main-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: none;   /* hidden until toggled */
-    flex-direction: column;
-    background-color: lightgray;
-    text-align: left;
-  }
-
-  /* When JS toggles .nav-open, show menu */
-  .main-nav.nav-open ul {
-    display: flex;
-  }
-
-  /* Vertical stacked items */
-  .main-nav li {
-    display: block;
-    font-size: 1.2em;
-    border-top: 1px solid #ddd;
-  }
-
-  .main-nav li a {
-    display: block;
-    padding: 0.75em 1em;
-    text-align: left;
-  }
-}
-
-/* ============================================================
-   DISABLE HAMBURGER ABOVE 540px
-   ============================================================ */
-
+/* ≥541px: hide hamburger, restore horizontal nav */
 @media (min-width: 541px) {
-
-  /* Hide hamburger entirely on larger screens */
   .nav-toggle {
     display: none;
   }
 
-  /* Restore horizontal nav */
   .main-nav ul {
     display: block;
-    flex-direction: row;
     text-align: center;
   }
 
@@ -561,5 +580,3 @@ footer{
     text-align: center;
   }
 }
-
-
