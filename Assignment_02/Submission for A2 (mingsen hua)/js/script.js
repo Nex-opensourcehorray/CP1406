@@ -30,7 +30,10 @@
     const email     = (emailEl?.value || "").trim();
     const password  = (passwordEl?.value || "").trim();
     const confirm   = (confirmEl?.value || "").trim();
-
+    const selectedDate = new Date(appointmentDateEl.value);
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const referralEl = document.getElementById("referral");
     // helper to show inline error under a field
     const showError = (el, msg) => {
       if (!el) return;
@@ -75,6 +78,21 @@
       showError(appointmentDateEl, "Please select an appointment date.");
       isValid = false;
     }
+
+    
+
+    if (!appointmentDateEl.value || selectedDate < today) {
+      showError(appointmentDateEl, "Please choose a date today or later.");
+      isValid = false;
+
+    
+    if (!referralEl.value) {
+      showError(referralEl, "Please choose an option.");
+      isValid = false;
+}
+
+}
+
 
 
     if (isValid) {

@@ -16,5 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
           form.reset();
           window.location.href = "index.html";
         }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          message.textContent = "Invalid email format.";
+          message.style.color = "red";
+        return;
+        }
+
       });
     });
